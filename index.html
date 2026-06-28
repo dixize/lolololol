@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивное Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="custom-cursor-dot"></div>
+
+    <main class="container">
+        
+        <section class="hero-section scroll-reveal">
+            <h1>Разработка цифровых решений</h1>
+            <p>Создаю интерактивные сайты с адаптивным дизайном и умными интеграциями.</p>
+        </section>
+
+        <section class="portfolio-section scroll-reveal">
+            <h2>Мои Кейсы</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="landing">Лендинги</button>
+                <button class="filter-btn" data-filter="store">Магазины</button>
+                <button class="filter-btn" data-filter="service">Сервисы</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item-card" data-category="landing">
+                    <h4>Промо-страница "EcoForest"</h4>
+                    <p>Лендинг для защиты лесов.</p>
+                </div>
+                <div class="portfolio-item-card" data-category="service">
+                    <h4>Платформа "Pro Cleaning"</h4>
+                    <p>Веб-сервис для клининговой компании.</p>
+                </div>
+                <div class="portfolio-item-card" data-category="store">
+                    <h4>Digital Store</h4>
+                    <p>Магазин игровых плагинов и модов.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-section scroll-reveal">
+            <h2>Конструктор спецификации ТЗ</h2>
+            
+            <div class="tiles-grid">
+                <div class="selector-tile active" data-type="landing">
+                    <h4>Лендинг / Промо</h4>
+                    <p>Одностраничный сайт для бизнеса</p>
+                </div>
+                <div class="selector-tile" data-type="service">
+                    <h4>Платформа услуг</h4>
+                    <p>Калькуляторы, формы, личные кабинеты</p>
+                </div>
+                <div class="selector-tile" data-type="store">
+                    <h4>Интернет-магазин</h4>
+                    <p>Корзина, каталог, автоматизация</p>
+                </div>
+            </div>
+
+            <div class="addons-block">
+                <h3>Дополнительные модули:</h3>
+                <label class="addon-label">
+                    <input type="checkbox" id="addon-tg">
+                    <span>Уведомления в Telegram API <b id="tg-addon-price-text">+200 ₽</b></span>
+                </label>
+                <label class="addon-label">
+                    <input type="checkbox" id="addon-anim">
+                    <span>Продвинутые UI-анимации <b id="anim-addon-price-text">+150 ₽</b></span>
+                </label>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="price-counter">
+                    <span>Ориентировочная стоимость:</span>
+                    <div class="price-value"><span id="live-price-display">750</span> ₽</div>
+                </div>
+
+                <form id="portfolio-interactive-form" novalidate>
+                    <div class="input-group">
+                        <input type="text" id="client_name" placeholder="Ваше имя">
+                        <span class="custom-error-label"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="client_contact" placeholder="Ваш Telegram или Телефон">
+                        <span class="custom-error-label"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="client_task" placeholder="Опишите ваши пожелания к проекту (необязательно)"></textarea>
+                    </div>
+
+                    <button type="submit" id="form-submit-trigger">
+                        <span class="spinner hidden"></span>
+                        <span class="btn-text">Отправить спецификацию ТЗ</span>
+                    </button>
+                </form>
+
+                <div id="form-success-state" class="hidden">
+                    <div class="success-icon">✓</div>
+                    <h3>ТЗ успешно сформировано!</h3>
+                    <p>Менеджер уже получил уведомление в Telegram и свяжется с вами в ближайшее время.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
